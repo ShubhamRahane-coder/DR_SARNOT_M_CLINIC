@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Sarnot Multispeciality Clinic - All Services</title>
+        <style>
+                .reveal {
+                        opacity: 0;
+                        transition: all 2.5s cubic-bezier(0.2, 1, 0.3, 1);
+                        will-change: transform, opacity;
+                }
+
+                .reveal.active {
+                        opacity: 1;
+                        transform: translate(0, 0) scale(1) !important;
+                }
+
+                .reveal-up {
+                        transform: translateY(80px);
+                }
+
+                .reveal-down {
+                        transform: translateY(-80px);
+                }
+
+                .reveal-left {
+                        transform: translateX(-80px);
+                }
+
+                .reveal-right {
+                        transform: translateX(80px);
+                }
+
+                .reveal-scale {
+                        transform: scale(0.92);
+                }
+
+                .delay-100 {
+                        transition-delay: 200ms;
+                }
+
+                .delay-200 {
+                        transition-delay: 400ms;
+                }
+
+                .delay-300 {
+                        transition-delay: 600ms;
+                }
+
+                .delay-400 {
+                        transition-delay: 800ms;
+                }
+
+                .delay-500 {
+                        transition-delay: 1000ms;
+                }
+
+                .delay-600 {
+                        transition-delay: 1200ms;
+                }
+
+                .delay-700 {
+                        transition-delay: 1400ms;
+                }
+
+                .delay-800 {
+                        transition-delay: 1600ms;
+                }
+        </style>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <script id="tailwind-config">
+                tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "surface-container-high": "#e6e8e9",
+                                                "secondary": "#416562",
+                                                "secondary-container": "#c1e7e3",
+                                                "error": "#ba1a1a",
+                                                "on-tertiary-fixed": "#00201b",
+                                                "on-tertiary-fixed-variant": "#194f46",
+                                                "on-secondary-container": "#456966",
+                                                "on-primary-container": "#87a0cd",
+                                                "surface-bright": "#f8fafa",
+                                                "on-secondary-fixed-variant": "#294d4a",
+                                                "surface-container-highest": "#e1e3e3",
+                                                "inverse-primary": "#aec7f7",
+                                                "tertiary-fixed": "#b7ede1",
+                                                "on-surface-variant": "#44474e",
+                                                "on-error": "#ffffff",
+                                                "inverse-surface": "#2e3131",
+                                                "tertiary-fixed-dim": "#9cd1c5",
+                                                "primary-fixed": "#d6e3ff",
+                                                "primary": "#002046",
+                                                "tertiary": "#002621",
+                                                "surface-tint": "#465f88",
+                                                "outline-variant": "#c4c6cf",
+                                                "on-surface": "#191c1d",
+                                                "on-secondary-fixed": "#00201e",
+                                                "error-container": "#ffdad6",
+                                                "tertiary-container": "#003e36",
+                                                "surface-container": "#eceeee",
+                                                "surface": "#f8fafa",
+                                                "on-background": "#191c1d",
+                                                "on-tertiary-container": "#75a99e",
+                                                "surface-variant": "#e1e3e3",
+                                                "primary-container": "#1b365d",
+                                                "surface-container-low": "#f2f4f4",
+                                                "on-primary-fixed-variant": "#2e476f",
+                                                "on-secondary": "#ffffff",
+                                                "surface-dim": "#d8dada",
+                                                "outline": "#74777f",
+                                                "secondary-fixed-dim": "#a8ceca",
+                                                "surface-container-lowest": "#ffffff",
+                                                "on-primary": "#ffffff",
+                                                "on-error-container": "#93000a",
+                                                "on-primary-fixed": "#001b3d",
+                                                "on-tertiary": "#ffffff",
+                                                "inverse-on-surface": "#eff1f1",
+                                                "primary-fixed-dim": "#aec7f7",
+                                                "background": "#f8fafa",
+                                                "secondary-fixed": "#c4eae6"
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.25rem",
+                                                "lg": "0.5rem",
+                                                "xl": "0.75rem",
+                                                "full": "9999px"
+                                        },
+                                        "spacing": {
+                                                "section-gap": "120px",
+                                                "margin-mobile": "16px",
+                                                "container-max": "1280px",
+                                                "unit": "8px",
+                                                "gutter": "24px",
+                                                "margin-desktop": "64px"
+                                        },
+                                        "fontFamily": {
+                                                "label-sm": [
+                                                        "Inter"
+                                                ],
+                                                "body-md": [
+                                                        "Inter"
+                                                ],
+                                                "body-lg": [
+                                                        "Inter"
+                                                ],
+                                                "headline-xl": [
+                                                        "Manrope"
+                                                ],
+                                                "headline-md": [
+                                                        "Manrope"
+                                                ],
+                                                "headline-lg": [
+                                                        "Manrope"
+                                                ]
+                                        },
+                                        "fontSize": {
+                                                "label-sm": [
+                                                        "14px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "letterSpacing": "0.05em",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "body-md": [
+                                                        "16px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "body-lg": [
+                                                        "18px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "headline-xl": [
+                                                        "48px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "letterSpacing": "-0.02em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "headline-md": [
+                                                        "24px",
+                                                        {
+                                                                "lineHeight": "1.4",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "headline-lg": [
+                                                        "32px",
+                                                        {
+                                                                "lineHeight": "1.3",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ]
+                                        }
+                                },
+                        },
+                }
+        </script>
+</head>
+
+<body class="bg-background text-on-background font-body-md min-h-screen">
+        <!-- TopAppBar -->
+        <header class="bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-sm fixed top-0 w-full z-50 z-[2000]"
+                style="font-family:Manrope,sans-serif">
+                <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+                        <a href="index.html" class="text-lg font-extrabold tracking-tight text-[#002046]">Dr. Sarnot
+                                Multispeciality Clinic</a>
+                        <nav class="hidden md:flex gap-8 items-center">
+                                <a href="index.html"
+                                        class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+                                        data-page="index">Home</a>
+                                <a href="services.html"
+                                        class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+                                        data-page="services">Services</a>
+                                <a href="about.html"
+                                        class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+                                        data-page="about">About</a>
+                                <a href="contact.html"
+                                        class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+                                        data-page="contact">Contact</a>
+                                <div
+                                        class="flex items-center gap-2 bg-secondary-container/30 px-3 py-1 rounded-full border border-secondary-container/50 ml-4">
+                                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                        <span class="text-xs font-bold text-secondary uppercase tracking-wider">Open
+                                                Now</span>
+                                </div>
+                        </nav>
+                        <div class="flex items-center gap-3">
+                                <a href="book-appointment.html"
+                                        class="hidden md:inline-flex bg-[#002046] text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 transition-all">Book
+                                        Appointment</a>
+                                <button id="mob-btn" class="md:hidden p-2 text-[#002046]">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M4 6h16M4 12h16M4 18h16" />
+                                        </svg>
+                                </button>
+                        </div>
+                </div>
+                <div id="mob-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-2">
+                        <a href="index.html"
+                                class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">Home</a>
+                        <a href="services.html"
+                                class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">Services</a>
+                        <a href="about.html"
+                                class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">About</a>
+                        <a href="contact.html"
+                                class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">Contact</a>
+                        <a href="book-appointment.html"
+                                class="block bg-[#002046] text-white text-center py-2.5 rounded-lg font-bold mt-2">Book
+                                Appointment</a>
+                </div>
+                <script>
+                                (function () {
+                                        var btn = document.getElementById("mob-btn");
+                                        var menu = document.getElementById("mob-menu");
+                                        if (btn) btn.addEventListener("click", function () { menu.classList.toggle("hidden"); });
+                                        var seg = location.pathname.split("/").pop().replace(".html", "");
+                                        if (!seg) seg = "index";
+                                        document.querySelectorAll(".nav-link").forEach(function (a) {
+                                                if (a.dataset.page === seg) {
+                                                        a.style.color = "#002046";
+                                                        a.style.borderBottom = "2px solid #002046";
+                                                        a.style.paddingBottom = "2px";
+                                                }
+                                        });
+                                })();
+                </script>
+        </header>
+        <main class="w-full">
+                <!-- Hero Section -->
+                <section style="margin-top: 15vh;"
+                        class="max-w-container-max mx-auto px-gutter pt-margin-desktop pb-section-gap flex flex-col items-center text-center reveal reveal-up">
+                        <div
+                                class="inline-flex items-center justify-center bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full font-label-sm text-label-sm mb-6 animate-float">
+                                Comprehensive Care
+                        </div>
+                        <h1
+                                class="font-headline-xl text-headline-xl text-primary mb-6 max-w-4xl reveal reveal-up delay-100">
+                                Our Specialised
+                                Clinical Services</h1>
+                        <p
+                                class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl reveal reveal-up delay-200">
+                                Discover our range of
+                                advanced dental and dermatological treatments, delivered with precision and clinical
+                                serenity in a premium environment.</p>
+                </section>
+                <!-- Services Grid (following IMAGE_20 structure) -->
+                <section class="max-w-container-max mx-auto px-gutter pb-section-gap reveal reveal-up">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <!-- Department 1: Root Canal Center -->
+                                <div
+                                        class="reveal reveal-up delay-100 hover-lift bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_20px_rgba(27,54,93,0.04)] border border-surface-container-high hover:shadow-[0_8px_30px_rgba(27,54,93,0.08)] transition-all flex flex-col h-full group">
+                                        <div
+                                                class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform animate-float">
+                                                <span
+                                                        class="material-symbols-outlined text-primary text-3xl">dentistry</span>
+                                        </div>
+                                        <h3 class="font-headline-md text-headline-md text-primary mb-4">Root Canal
+                                                Center</h3>
+                                        <ul
+                                                class="space-y-3 font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>RCT
+                                                </li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Aesthetic
+                                                        RCT</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Computerized
+                                                        X-ray</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Digital
+                                                        Imaging</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Endodontic
+                                                        Treatment</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Single-Sitting
+                                                        RCT</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Pain-Free
+                                                        Root Canal</li>
+                                        </ul>
+                                        <img alt="3D medical visualization of root canal anatomy"
+                                                class="w-full h-48 object-cover rounded-lg mt-auto"
+                                                src="service-rct-3d.png" />
+                                </div>
+                                <!-- Department 2: Implant Center -->
+                                <div
+                                        class="reveal reveal-up delay-200 hover-lift bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_20px_rgba(27,54,93,0.04)] border border-surface-container-high hover:shadow-[0_8px_30px_rgba(27,54,93,0.08)] transition-all flex flex-col h-full group">
+                                        <div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform animate-float"
+                                                style="animation-delay: 0.5s">
+                                                <span
+                                                        class="material-symbols-outlined text-primary text-3xl">surgical</span>
+                                        </div>
+                                        <h3 class="font-headline-md text-headline-md text-primary mb-4">Implant Center
+                                        </h3>
+                                        <ul
+                                                class="space-y-3 font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Dental
+                                                        Implant Placement</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Consultation
+                                                        &amp; Planning</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Implant-Supported
+                                                        Crowns</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Implant-Supported
+                                                        Bridges</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Esthetic
+                                                        Implant Placement</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Advanced
+                                                        Surgical Techniques</li>
+                                        </ul>
+                                        <img alt="3D architectural rendering of a dental implant"
+                                                class="w-full h-48 object-cover rounded-lg mt-auto"
+                                                src="service-implant-3d.png" />
+                                </div>
+                                <!-- Department 3: Full Mouth Rehabilitation -->
+                                <div
+                                        class="reveal reveal-up delay-300 hover-lift bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_20px_rgba(27,54,93,0.04)] border border-surface-container-high hover:shadow-[0_8px_30px_rgba(27,54,93,0.08)] transition-all flex flex-col h-full group">
+                                        <div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform animate-float"
+                                                style="animation-delay: 1s">
+                                                <span
+                                                        class="material-symbols-outlined text-primary text-3xl">medical_services</span>
+                                        </div>
+                                        <h3 class="font-headline-md text-headline-md text-primary mb-4">Full Mouth
+                                                Rehabilitation</h3>
+                                        <ul
+                                                class="space-y-3 font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Gum
+                                                        Disease Treatment</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Deep
+                                                        Cleaning &amp; Scaling</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Cavity
+                                                        Filling</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Full/Partial
+                                                        Dentures</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Fixed
+                                                        Bridges</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Crown
+                                                        Placement</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Periodontal
+                                                        Treatment</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Preventive
+                                                        Care</li>
+                                        </ul>
+                                        <img alt="Futuristic 3D digital scan for full mouth rehabilitation"
+                                                class="w-full h-48 object-cover rounded-lg mt-auto"
+                                                src="service-rehab-3d.png" />
+                                </div>
+                                <!-- Department 4: Cosmetic & General Dentistry -->
+                                <div
+                                        class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_20px_rgba(27,54,93,0.04)] border border-surface-container-high hover:shadow-[0_8px_30px_rgba(27,54,93,0.08)] transition-all flex flex-col h-full group">
+                                        <div
+                                                class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                                <span
+                                                        class="material-symbols-outlined text-primary text-3xl">sentiment_very_satisfied</span>
+                                        </div>
+                                        <h3 class="font-headline-md text-headline-md text-primary mb-4">Cosmetic &amp;
+                                                General Dentistry</h3>
+                                        <ul
+                                                class="space-y-3 font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Teeth
+                                                        Whitening/Bleaching</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Smile
+                                                        Makeover</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Smile
+                                                        Design</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Routine
+                                                        Checkups</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Professional
+                                                        Cleaning</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Fluoride
+                                                        Treatment</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Braces
+                                                        &amp; Alignment</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Bite
+                                                        Correction</li>
+                                        </ul>
+                                </div>
+                                <!-- Department 5: Pediatric & Surgical -->
+                                <div
+                                        class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_20px_rgba(27,54,93,0.04)] border border-surface-container-high hover:shadow-[0_8px_30px_rgba(27,54,93,0.08)] transition-all flex flex-col h-full group">
+                                        <div
+                                                class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                                <span
+                                                        class="material-symbols-outlined text-primary text-3xl">child_care</span>
+                                        </div>
+                                        <h3 class="font-headline-md text-headline-md text-primary mb-4">Pediatric &amp;
+                                                Surgical</h3>
+                                        <ul
+                                                class="space-y-3 font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Children's
+                                                        Dental Treatment</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Pediatric
+                                                        Oral Care</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Baby
+                                                        Teeth Management</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Preventive
+                                                        Care for Kids</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Tooth/Surgical
+                                                        Extractions</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Wisdom
+                                                        Tooth Removal</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Emergency
+                                                        Dental Treatment</li>
+                                        </ul>
+                                </div>
+                                <!-- Department 6: Skin, Hair & Laser Treatment Center -->
+                                <div
+                                        class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_20px_rgba(27,54,93,0.04)] border border-surface-container-high hover:shadow-[0_8px_30px_rgba(27,54,93,0.08)] transition-all flex flex-col h-full group">
+                                        <div
+                                                class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                                <span
+                                                        class="material-symbols-outlined text-primary text-3xl">face_retouching_natural</span>
+                                        </div>
+                                        <h3 class="font-headline-md text-headline-md text-primary mb-4">Skin, Hair &amp;
+                                                Laser Treatment Center</h3>
+                                        <ul
+                                                class="space-y-3 font-body-md text-body-md text-on-surface-variant mb-8 flex-grow">
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Acne/Pimple
+                                                        Treatment</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Scar
+                                                        Removal</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Dark
+                                                        Spot Removal</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Dark
+                                                        Circles Treatment</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Wrinkle
+                                                        Treatment &amp; Anti-Aging</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Hair
+                                                        Loss/Growth Stimulation</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>Chemical
+                                                        Peels &amp; Microneedling</li>
+                                                <li class="flex items-start"><span
+                                                                class="material-symbols-outlined text-secondary mr-2 text-xl">check_circle</span>PRP,
+                                                        Mesotherapy, Botox, Fillers</li>
+                                        </ul>
+                                </div>
+                        </div>
+                </section>
+                <!-- FAQ Section -->
+                <section class="bg-surface-container-low py-section-gap reveal reveal-up">
+                        <div class="max-w-3xl mx-auto px-gutter">
+                                <div class="text-center mb-12">
+                                        <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Frequently Asked
+                                                Questions</h2>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Common inquiries
+                                                about our clinical services and procedures.</p>
+                                </div>
+                                <div class="space-y-4">
+                                        <!-- FAQ Item 1 -->
+                                        <div
+                                                class="faq-item bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden hover:border-secondary transition-colors cursor-pointer">
+                                                <div class="faq-question p-6 flex justify-between items-center">
+                                                        <h4
+                                                                class="font-headline-md text-headline-md text-primary text-lg">
+                                                                Do you offer pain-free treatments?</h4>
+                                                        <span
+                                                                class="faq-icon material-symbols-outlined text-outline transition-transform duration-300">expand_more</span>
+                                                </div>
+                                                <div class="faq-answer px-6 text-on-surface-variant overflow-hidden"
+                                                        style="max-height:0px">
+                                                        <div class="pb-6">
+                                                                Yes, we prioritize patient comfort and use advanced
+                                                                local anesthesia techniques and computerized rotary
+                                                                systems to ensure your experience is as comfortable and
+                                                                pain-free as possible.
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- FAQ Item 2 -->
+                                        <div
+                                                class="faq-item bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden hover:border-secondary transition-colors cursor-pointer">
+                                                <div class="faq-question p-6 flex justify-between items-center">
+                                                        <h4
+                                                                class="font-headline-md text-headline-md text-primary text-lg">
+                                                                How long does a smile makeover take?</h4>
+                                                        <span
+                                                                class="faq-icon material-symbols-outlined text-outline transition-transform duration-300">expand_more</span>
+                                                </div>
+                                                <div class="faq-answer px-6 text-on-surface-variant overflow-hidden"
+                                                        style="max-height:0px">
+                                                        <div class="pb-6">
+                                                                A smile makeover timeline varies based on your
+                                                                individual needs. Simple cases can take 2-3 visits,
+                                                                while more complex transformations involving implants or
+                                                                orthodontics may take several months. We will provide a
+                                                                detailed timeline during your consultation.
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- FAQ Item 3 -->
+                                        <div
+                                                class="faq-item bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden hover:border-secondary transition-colors cursor-pointer">
+                                                <div class="faq-question p-6 flex justify-between items-center">
+                                                        <h4
+                                                                class="font-headline-md text-headline-md text-primary text-lg">
+                                                                Are laser treatments safe for all skin types?</h4>
+                                                        <span
+                                                                class="faq-icon material-symbols-outlined text-outline transition-transform duration-300">expand_more</span>
+                                                </div>
+                                                <div class="faq-answer px-6 text-on-surface-variant overflow-hidden"
+                                                        style="max-height:0px">
+                                                        <div class="pb-6">
+                                                                We use state-of-the-art laser technology that is safe
+                                                                and effective for various skin types. Our specialists
+                                                                will perform a thorough skin analysis before any
+                                                                treatment to ensure the most appropriate and safest
+                                                                approach for your specific skin profile.
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- Call to Action -->
+                <section class="max-w-container-max mx-auto px-gutter py-section-gap reveal reveal-up">
+                        <div
+                                class="bg-primary rounded-2xl p-12 md:p-16 flex flex-col md:flex-row items-center justify-between shadow-[0_20px_40px_rgba(0,32,70,0.1)] relative overflow-hidden">
+                                <!-- Abstract background pattern placeholder -->
+                                <div
+                                        class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent">
+                                </div>
+                                <div class="relative z-10 max-w-xl mb-8 md:mb-0">
+                                        <h2 class="font-headline-xl text-headline-xl text-on-primary mb-4">Ready to
+                                                Prioritize Your Health?</h2>
+                                        <p class="font-body-lg text-body-lg text-primary-fixed-dim">Book a consultation
+                                                with our specialized clinical team today and experience the highest
+                                                standard of care.</p>
+                                </div>
+                                <div class="relative z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                                        <a href="contact.html"
+                                                class="bg-white text-primary px-8 py-4 rounded-lg font-label-sm text-label-sm font-bold hover:bg-surface-container-lowest transition-colors shadow-lg text-center">Contact
+                                                Us</a>
+                                        <a href="about.html#team"
+                                                class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-label-sm text-label-sm font-bold hover:bg-secondary/90 transition-colors shadow-lg border border-secondary text-center">View
+                                                Specialists</a>
+                                </div>
+                        </div>
+                </section>
+        </main>
+
+
+        <script src="footer.js"></script>
+</body>
+
+</html>

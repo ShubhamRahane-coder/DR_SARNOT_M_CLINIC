@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Get in Touch with Sarnot Clinic</title>
+  <style>
+    .reveal { opacity: 0; transition: all 2.5s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform, opacity; }
+    .reveal.active { opacity: 1; transform: translate(0, 0) scale(1) !important; }
+    .reveal-up { transform: translateY(80px); }
+    .reveal-down { transform: translateY(-80px); }
+    .reveal-left { transform: translateX(-80px); }
+    .reveal-right { transform: translateX(80px); }
+    .reveal-scale { transform: scale(0.92); }
+    .delay-100 { transition-delay: 200ms; }
+    .delay-200 { transition-delay: 400ms; }
+    .delay-300 { transition-delay: 600ms; }
+    .delay-400 { transition-delay: 800ms; }
+    .delay-500 { transition-delay: 1000ms; }
+    .delay-600 { transition-delay: 1200ms; }
+    .delay-700 { transition-delay: 1400ms; }
+    .delay-800 { transition-delay: 1600ms; }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#e1e3e3",
+            "surface-variant": "#e1e3e3",
+            "on-secondary-fixed": "#00201e",
+            "outline": "#74777f",
+            "on-secondary-fixed-variant": "#294d4a",
+            "error": "#ba1a1a",
+            "tertiary-fixed-dim": "#9cd1c5",
+            "tertiary": "#002621",
+            "on-tertiary-container": "#75a99e",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#001b3d",
+            "primary": "#002046",
+            "surface-bright": "#f8fafa",
+            "outline-variant": "#c4c6cf",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#003e36",
+            "surface-dim": "#d8dada",
+            "on-secondary-container": "#456966",
+            "surface-container-high": "#e6e8e9",
+            "surface-tint": "#465f88",
+            "inverse-primary": "#aec7f7",
+            "surface-container-low": "#f2f4f4",
+            "inverse-surface": "#2e3131",
+            "secondary-fixed": "#c4eae6",
+            "on-tertiary-fixed": "#00201b",
+            "on-surface-variant": "#44474e",
+            "on-tertiary-fixed-variant": "#194f46",
+            "inverse-on-surface": "#eff1f1",
+            "on-error": "#ffffff",
+            "secondary": "#416562",
+            "primary-fixed": "#d6e3ff",
+            "on-background": "#191c1d",
+            "secondary-fixed-dim": "#a8ceca",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#87a0cd",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#aec7f7",
+            "on-surface": "#191c1d",
+            "background": "#f8fafa",
+            "surface": "#f8fafa",
+            "surface-container": "#eceeee",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#1b365d",
+            "on-primary-fixed-variant": "#2e476f",
+            "secondary-container": "#c1e7e3",
+            "tertiary-fixed": "#b7ede1"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "section-gap": "120px",
+            "margin-desktop": "64px",
+            "container-max": "1280px",
+            "unit": "8px",
+            "margin-mobile": "16px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "label-sm": ["Inter"],
+            "headline-md": ["Manrope"],
+            "headline-lg": ["Manrope"],
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl": ["Manrope"]
+          },
+          "fontSize": {
+            "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body
+  class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container">
+  <!-- TopNavBar -->
+  <header class="bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-sm fixed top-0 w-full z-50 z-[2000]"
+    style="font-family:Manrope,sans-serif">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+      <a href="index.html" class="text-lg font-extrabold tracking-tight text-[#002046]">Dr. Sarnot Multispeciality
+        Clinic</a>
+      <nav class="hidden md:flex gap-8 items-center">
+        <a href="index.html" class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+          data-page="index">Home</a>
+        <a href="services.html" class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+          data-page="services">Services</a>
+        <a href="about.html" class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+          data-page="about">About</a>
+        <a href="contact.html" class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+          data-page="contact">Contact</a>
+        <div class="flex items-center gap-2 bg-secondary-container/30 px-3 py-1 rounded-full border border-secondary-container/50 ml-4">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          <span class="text-xs font-bold text-secondary uppercase tracking-wider">Open Now</span>
+        </div>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="book-appointment.html"
+          class="hidden md:inline-flex bg-[#002046] text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 transition-all">Book
+          Appointment</a>
+        <button id="mob-btn" class="md:hidden p-2 text-[#002046]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mob-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-2">
+      <a href="index.html" class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">Home</a>
+      <a href="services.html" class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">Services</a>
+      <a href="about.html" class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">About</a>
+      <a href="contact.html" class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">Contact</a>
+      <a href="book-appointment.html"
+        class="block bg-[#002046] text-white text-center py-2.5 rounded-lg font-bold mt-2">Book Appointment</a>
+    </div>
+    <script>
+        (function () {
+          var btn = document.getElementById("mob-btn");
+          var menu = document.getElementById("mob-menu");
+          if (btn) btn.addEventListener("click", function () { menu.classList.toggle("hidden"); });
+          var seg = location.pathname.split("/").pop().replace(".html", "");
+          if (!seg) seg = "index";
+          document.querySelectorAll(".nav-link").forEach(function (a) {
+            if (a.dataset.page === seg) {
+              a.style.color = "#002046";
+              a.style.borderBottom = "2px solid #002046";
+              a.style.paddingBottom = "2px";
+            }
+          });
+        })();
+    </script>
+  </header>
+  <!-- Main Content -->
+  <main class="pt-32 pb-section-gap min-h-screen">
+    <!-- Hero Section -->
+    <section class="max-w-container-max mx-auto px-gutter mb-section-gap reveal">
+      <div class="text-center max-w-3xl mx-auto space-y-6">
+        <h1 class="font-headline-xl text-headline-xl text-primary">Get in Touch with Sarnot Clinic</h1>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">Whether you need to book an appointment or ask a
+          question, we're here to help</p>
+      </div>
+    </section>
+    <!-- Contact Information Grid -->
+    <section class="max-w-container-max mx-auto px-gutter mb-section-gap reveal reveal-up">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Office Card -->
+        <div
+          class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_30px_rgb(27,54,93,0.04)] border border-surface-container-high transition-transform hover:-translate-y-1 duration-300 flex flex-col items-center text-center">
+          <div
+            class="w-16 h-16 rounded-full bg-secondary-container text-secondary flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-[32px]" data-icon="location_on">location_on</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-primary mb-3">Office</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">Bus Stand, Loni - Sangamner Road, Loni Bk.,
+            Ahmednagar, Maharashtra 413736</p>
+        </div>
+        <!-- Email Card -->
+        <div
+          class="reveal reveal-up delay-100 hover-lift bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_30px_rgb(27,54,93,0.04)] border border-surface-container-high transition-transform duration-300 flex flex-col items-center text-center">
+          <div
+            class="w-16 h-16 rounded-full bg-secondary-container text-secondary flex items-center justify-center mb-6 animate-float">
+            <span class="material-symbols-outlined text-[32px]" data-icon="mail">mail</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-primary mb-3">Email Address</h3>
+          <a class="font-body-md text-body-md text-primary font-medium hover:underline"
+            href="mailto:sarnotclinic@gmail.com">sarnotclinic@gmail.com</a>
+        </div>
+        <!-- Phone Card -->
+        <div
+          class="reveal reveal-up delay-200 hover-lift bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_30px_rgb(27,54,93,0.04)] border border-surface-container-high transition-transform duration-300 flex flex-col items-center text-center">
+          <div
+            class="w-16 h-16 rounded-full bg-secondary-container text-secondary flex items-center justify-center mb-6 animate-float" style="animation-delay: 0.5s">
+            <span class="material-symbols-outlined text-[32px]" data-icon="call">call</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-primary mb-3">Phone Number</h3>
+          <div class="flex flex-col space-y-2">
+            <a class="font-body-md text-body-md text-primary font-medium hover:underline" href="tel:+917057893339">+91
+              7057893339</a>
+            <a class="font-body-md text-body-md text-primary font-medium hover:underline" href="tel:+917057273339">+91
+              7057273339</a>
+          </div>
+        </div>
+        <!-- Social Card -->
+        <div
+          class="reveal reveal-up delay-300 hover-lift bg-surface-container-lowest p-8 rounded-xl shadow-[0_8px_30px_rgb(27,54,93,0.04)] border border-surface-container-high transition-transform duration-300 flex flex-col items-center text-center">
+          <div
+            class="w-16 h-16 rounded-full bg-secondary-container text-secondary flex items-center justify-center mb-6 animate-float" style="animation-delay: 1s">
+            <span class="material-symbols-outlined text-[32px]" data-icon="share">share</span>
+          </div>
+          <h3 class="font-headline-md text-headline-md text-primary mb-3">Social Media</h3>
+          <a class="font-body-md text-body-md text-primary font-medium hover:underline" href="#">@sarnotclinic</a>
+        </div>
+      </div>
+    </section>
+    <!-- Two Column Section: Form & Process -->
+    <section class="max-w-container-max mx-auto px-gutter mb-section-gap reveal reveal-up">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Left: Contact Form -->
+
+        <div
+          class="bg-surface-container-lowest rounded-xl shadow-[0_8px_30px_rgb(27,54,93,0.04)] border border-surface-container-high p-8 lg:p-12">
+          <div class="mb-8">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Send Us a Message</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">Quick booking or inquiry? Connect with us
+              directly.</p>
+          </div>
+          <form id="contact-booking-form" class="space-y-6">
+            <!-- Service Selection -->
+            <div class="space-y-3">
+              <label class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-bold">Select
+                Service</label>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="svc-card p-4 border-2 border-primary bg-[#e8f0fe] rounded-xl cursor-pointer transition-all"
+                  data-svc="Dental Consultation">
+                  <div class="text-xl mb-1">🦷</div>
+                  <div class="text-xs font-bold text-primary">Dental</div>
+                </div>
+                <div
+                  class="svc-card p-4 border border-slate-200 rounded-xl cursor-pointer transition-all hover:bg-slate-50"
+                  data-svc="Skin & Hair Care">
+                  <div class="text-xl mb-1">✨</div>
+                  <div class="text-xs font-bold text-slate-700">Skin & Hair</div>
+                </div>
+              </div>
+              <input type="hidden" id="contact-svc" value="Dental Consultation">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="font-label-sm text-label-sm text-on-surface" for="contact-name">Full Name *</label>
+                <input
+                  class="w-full rounded-lg border-slate-200 bg-white px-4 py-3 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                  id="contact-name" placeholder="John Doe" type="text" required>
+              </div>
+              <div class="space-y-2">
+                <label class="font-label-sm text-label-sm text-on-surface" for="contact-phone">Phone Number *</label>
+                <input
+                  class="w-full rounded-lg border-slate-200 bg-white px-4 py-3 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                  id="contact-phone" placeholder="+91 00000 00000" type="tel" required>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="font-label-sm text-label-sm text-on-surface" for="contact-date">Preferred Date</label>
+                <input
+                  class="w-full rounded-lg border-slate-200 bg-white px-4 py-3 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                  id="contact-date" type="date">
+              </div>
+              <div class="space-y-2">
+                <label class="font-label-sm text-label-sm text-on-surface" for="contact-time">Preferred Time</label>
+                <select
+                  class="w-full rounded-lg border-slate-200 bg-white px-4 py-3 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                  id="contact-time">
+                  <option value="">Any Time</option>
+                  <option>Morning</option>
+                  <option>Afternoon</option>
+                  <option>Evening</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="font-label-sm text-label-sm text-on-surface" for="contact-message">Message / Notes</label>
+              <textarea
+                class="w-full rounded-lg border-slate-200 bg-white px-4 py-3 font-body-md text-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
+                id="contact-message" placeholder="How can we help you?" rows="3"></textarea>
+            </div>
+
+            <button
+              class="w-full bg-[#25D366] text-white rounded-lg py-4 font-bold flex items-center justify-center gap-3 hover:opacity-90 transition-all shadow-md"
+              type="submit">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+              </svg>
+              Send to WhatsApp
+            </button>
+          </form>
+        </div>
+
+        <script>
+          document.querySelectorAll("#contact-booking-form .svc-card").forEach(function (card) {
+            card.addEventListener("click", function () {
+              document.querySelectorAll("#contact-booking-form .svc-card").forEach(function (c) {
+                c.classList.remove("border-primary", "bg-[#e8f0fe]");
+                c.classList.add("border-slate-200");
+              });
+              this.classList.add("border-primary", "bg-[#e8f0fe]");
+              this.classList.remove("border-slate-200");
+              document.getElementById("contact-svc").value = this.getAttribute("data-svc");
+            });
+          });
+
+          document.getElementById("contact-booking-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var svc = document.getElementById("contact-svc").value;
+            var name = document.getElementById("contact-name").value;
+            var phone = document.getElementById("contact-phone").value;
+            var date = document.getElementById("contact-date").value || "Not specified";
+            var time = document.getElementById("contact-time").value || "Not specified";
+            var msg = document.getElementById("contact-message").value || "No additional notes";
+
+            var text = "*🏥 New Contact Inquiry - Sarnot Clinic*%0A%0A"
+              + "*Name:* " + encodeURIComponent(name) + "%0A"
+              + "*Phone:* " + encodeURIComponent(phone) + "%0A"
+              + "*Service:* " + encodeURIComponent(svc) + "%0A"
+              + "*Date:* " + encodeURIComponent(date) + "%0A"
+              + "*Time:* " + encodeURIComponent(time) + "%0A"
+              + "*Message:* " + encodeURIComponent(msg) + "%0A%0A"
+              + "_Sent from Contact Page_";
+
+            window.open("https://wa.me/917057893339?text=" + text, "_blank");
+          });
+        </script>
+
+        <!-- Right: Process & Schedule -->
+        <div class="flex flex-col space-y-12">
+          <!-- How to Get Started -->
+          <div>
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-8">How to Get Started</h2>
+            <div class="space-y-8">
+              <div class="reveal reveal-left delay-100 flex gap-6">
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-headline-md text-headline-md font-bold animate-float">
+                  01
+                </div>
+                <div>
+                  <h4 class="font-headline-md text-headline-md text-primary mb-2">Schedule an Appointment</h4>
+                  <p class="font-body-md text-body-md text-on-surface-variant">Choose a date and time that works best
+                    for you. We offer flexible hours throughout the week.</p>
+                </div>
+              </div>
+              <div class="reveal reveal-left delay-200 flex gap-6">
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-headline-md text-headline-md font-bold animate-float" style="animation-delay: 0.5s">
+                  02
+                </div>
+                <div>
+                  <h4 class="font-headline-md text-headline-md text-primary mb-2">Come Visit Our Clinic</h4>
+                  <p class="font-body-md text-body-md text-on-surface-variant">Arrive at your scheduled time and check
+                    in at the front desk. We'll handle the rest.</p>
+                </div>
+              </div>
+              <div class="reveal reveal-left delay-300 flex gap-6">
+                <div
+                  class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-headline-md text-headline-md font-bold animate-float" style="animation-delay: 1s">
+                  03
+                </div>
+                <div>
+                  <h4 class="font-headline-md text-headline-md text-primary mb-2">Receive Expert Care</h4>
+                  <p class="font-body-md text-body-md text-on-surface-variant">Enjoy calm, personalized dental and
+                    cosmetic care thoughtfully designed for your comfort.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Clinic Schedule -->
+          <div class="bg-primary text-on-primary rounded-xl p-8 shadow-lg relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('{{DATA:IMAGE:IMAGE_18}}')] bg-cover bg-center opacity-10"
+              data-alt="A subtle, abstract geometric pattern in deep navy and white, suggesting modern medical technology and precision, adding a textured background layer to a schedule card.">
+            </div>
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-6">
+                <span class="material-symbols-outlined text-[32px]" data-icon="schedule">schedule</span>
+                <h3 class="font-headline-lg text-headline-lg">Clinic Schedule</h3>
+              </div>
+              <div class="space-y-4 font-body-lg text-body-lg">
+                <div class="flex justify-between items-center border-b border-on-primary/20 pb-4">
+                  <span class="font-medium">Mon - Sat</span>
+                  <span>09:00 AM – 08:00 PM</span>
+                </div>
+                <div class="flex justify-between items-center pt-2 text-on-primary/70">
+                  <span class="font-medium">Sunday</span>
+                  <span>Closed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="max-w-container-max mx-auto px-6 lg:px-margin-desktop mb-section-gap reveal reveal-up">
+      <div class="relative rounded-[32px] overflow-hidden clinical-shadow border border-surface-variant h-[500px]">
+        <div id="clinic-map" style="width:100%;height:100%;cursor:pointer;"></div>
+
+        <div
+          class="hidden lg:block absolute top-10 left-10 z-[1000] bg-white/95 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-slate-100 max-w-sm">
+          <h3 class="font-bold text-primary text-xl mb-4">Quick Directions</h3>
+          <p class="text-slate-500 text-sm mb-6">Located near the Bus Stand in Loni. Ample parking available for
+            patients.</p>
+          <button onclick="getDirections()"
+            class="w-full py-3 bg-[#002046] text-white rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+            <span class="material-symbols-outlined">directions</span> Get Directions
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:hidden mt-6">
+        <button onclick="getDirections()"
+          class="w-full py-4 bg-[#002046] text-white rounded-xl font-bold flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined">directions</span> Get Directions
+        </button>
+      </div>
+    </section>
+
+
+    <script>
+      window.addEventListener('load', function () {
+        if (typeof L === 'undefined') return;
+        var m = L.map('clinic-map', { scrollWheelZoom: false }).setView([19.6582531, 74.4756534], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>', maxZoom: 19 }).addTo(m);
+        var icon = L.divIcon({ html: '<div style="background:#002046;color:#fff;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:bold;box-shadow:0 4px 14px rgba(0,32,70,.5)">+</div>', iconSize: [38, 38], iconAnchor: [19, 38], popupAnchor: [0, -42], className: '' });
+        L.marker([19.6582531, 74.4756534], { icon: icon }).addTo(m).bindPopup('<div style="font-family:Manrope,sans-serif"><b style="color:#002046">Dr. Sarnot Multispeciality Clinic</b><br><small>Near Bus Stand, Loni, Ahmednagar MH 413736</small></div>').openPopup();
+
+        // Make entire map clickable for directions
+        m.on('click', getDirections);
+      });
+
+      function getDirections() {
+        const dest = encodeURIComponent("Dr. Sarnot Multispeciality Clinic, Loni-Sangamner Road, Loni, Maharashtra 413736");
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            function (p) { window.open("https://www.google.com/maps/dir/" + p.coords.latitude + "," + p.coords.longitude + "/" + dest, "_blank"); },
+            function () { window.open("https://www.google.com/maps/dir//" + dest, "_blank"); }
+          );
+        } else { window.open("https://www.google.com/maps/dir//" + dest, "_blank"); }
+      }
+    </script>
+    <!-- Newsletter CTA -->
+    <section class="max-w-container-max mx-auto px-gutter mb-section-gap">
+      <div
+        class="bg-secondary-container rounded-2xl p-12 lg:p-16 text-center relative overflow-hidden shadow-[0_8px_30px_rgb(27,54,93,0.04)]">
+        <div
+          class="absolute inset-0 bg-[url('{{DATA:IMAGE:IMAGE_17}}')] bg-cover bg-center opacity-5 mix-blend-multiply"
+          data-alt="A soft, blurred abstract texture in light teal and white, suggesting a calm, serene clinic environment, used as a subtle background for a newsletter signup area.">
+        </div>
+        <div class="relative z-10 max-w-2xl mx-auto">
+          <h2 class="font-headline-xl text-headline-xl text-primary mb-4">Keep Smiling Bright</h2>
+          <p class="font-body-lg text-body-lg text-on-secondary-container mb-8">Subscribe to our newsletter for dental
+            tips, clinic updates, and exclusive offers.</p>
+          <form class="flex flex-col sm:flex-row gap-4 justify-center">
+            <input
+              class="w-full sm:w-96 rounded-lg border-none bg-surface-container-lowest px-6 py-4 font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-secondary transition-all shadow-sm"
+              placeholder="Enter your email address" required="" type="email" />
+            <button
+              class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-sm text-label-sm hover:bg-primary-container transition-colors shadow-md whitespace-nowrap"
+              type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="footer.js"></script>
+</body>
+
+</html>

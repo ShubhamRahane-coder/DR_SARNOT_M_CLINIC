@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>About Us | SARNOT Multispeciality Clinic</title>
+  <style>
+    .reveal {
+      opacity: 0;
+      transition: all 2.5s cubic-bezier(0.2, 1, 0.3, 1);
+      will-change: transform, opacity;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translate(0, 0) scale(1) !important;
+    }
+
+    .reveal-up {
+      transform: translateY(80px);
+    }
+
+    .reveal-down {
+      transform: translateY(-80px);
+    }
+
+    .reveal-left {
+      transform: translateX(-80px);
+    }
+
+    .reveal-right {
+      transform: translateX(80px);
+    }
+
+    .reveal-scale {
+      transform: scale(0.92);
+    }
+
+    .delay-100 {
+      transition-delay: 200ms;
+    }
+
+    .delay-200 {
+      transition-delay: 400ms;
+    }
+
+    .delay-300 {
+      transition-delay: 600ms;
+    }
+
+    .delay-400 {
+      transition-delay: 800ms;
+    }
+
+    .delay-500 {
+      transition-delay: 1000ms;
+    }
+
+    .delay-600 {
+      transition-delay: 1200ms;
+    }
+
+    .delay-700 {
+      transition-delay: 1400ms;
+    }
+
+    .delay-800 {
+      transition-delay: 1600ms;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-fixed-dim": "#9cd1c5",
+            "primary-fixed": "#d6e3ff",
+            "on-primary-container": "#87a0cd",
+            "surface": "#f8fafa",
+            "inverse-surface": "#2e3131",
+            "background": "#f8fafa",
+            "surface-tint": "#465f88",
+            "tertiary-container": "#003e36",
+            "on-primary": "#ffffff",
+            "outline-variant": "#c4c6cf",
+            "on-tertiary-fixed-variant": "#194f46",
+            "on-background": "#191c1d",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#aec7f7",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#c1e7e3",
+            "error": "#ba1a1a",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed": "#00201e",
+            "outline": "#74777f",
+            "surface-container-low": "#f2f4f4",
+            "surface-container-high": "#e6e8e9",
+            "surface-container": "#eceeee",
+            "secondary-fixed-dim": "#a8ceca",
+            "on-error-container": "#93000a",
+            "surface-variant": "#e1e3e3",
+            "on-secondary-container": "#456966",
+            "on-primary-fixed-variant": "#2e476f",
+            "on-primary-fixed": "#001b3d",
+            "surface-bright": "#f8fafa",
+            "secondary-fixed": "#c4eae6",
+            "secondary": "#416562",
+            "on-error": "#ffffff",
+            "tertiary": "#002621",
+            "on-secondary-fixed-variant": "#294d4a",
+            "primary-container": "#1b365d",
+            "on-surface": "#191c1d",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#eff1f1",
+            "inverse-primary": "#aec7f7",
+            "surface-dim": "#d8dada",
+            "surface-container-highest": "#e1e3e3",
+            "on-tertiary-container": "#75a99e",
+            "on-surface-variant": "#44474e",
+            "tertiary-fixed": "#b7ede1",
+            "on-tertiary-fixed": "#00201b",
+            "primary": "#002046"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "margin-mobile": "16px",
+            "unit": "8px",
+            "gutter": "24px",
+            "container-max": "1280px",
+            "section-gap": "120px",
+            "margin-desktop": "64px"
+          },
+          fontFamily: {
+            sans: ['Manrope', 'sans-serif'],
+            manrope: ['Manrope', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .material-symbols-outlined[data-weight="fill"] {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background text-on-background font-sans antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-on-secondary-container">
+  <!-- HEADER -->
+  <header class="bg-white/95 backdrop-blur-xl border-b border-slate-100 shadow-sm fixed top-0 w-full z-50 z-[2000]"
+    style="font-family:Manrope,sans-serif">
+    <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+      <a href="index.html" class="text-lg font-extrabold tracking-tight text-[#002046]">Dr. Sarnot Multispeciality
+        Clinic</a>
+      <nav class="hidden md:flex gap-8 items-center">
+        <a href="index.html" class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+          data-page="index">Home</a>
+        <a href="services.html" class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+          data-page="services">Services</a>
+        <a href="about.html" class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+          data-page="about">About</a>
+        <a href="contact.html" class="nav-link text-slate-500 font-semibold hover:text-[#002046] transition-colors"
+          data-page="contact">Contact</a>
+        <div
+          class="flex items-center gap-2 bg-secondary-container/30 px-3 py-1 rounded-full border border-secondary-container/50 ml-4">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          <span class="text-xs font-bold text-secondary uppercase tracking-wider">Open Now</span>
+        </div>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="book-appointment.html"
+          class="hidden md:inline-flex bg-[#002046] text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 transition-all">Book
+          Appointment</a>
+        <button id="mob-btn" class="md:hidden p-2 text-[#002046]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mob-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-2">
+      <a href="index.html" class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">Home</a>
+      <a href="services.html" class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">Services</a>
+      <a href="about.html" class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">About</a>
+      <a href="contact.html" class="block text-slate-600 font-semibold py-2 hover:text-[#002046]">Contact</a>
+      <a href="book-appointment.html"
+        class="block bg-[#002046] text-white text-center py-2.5 rounded-lg font-bold mt-2">Book Appointment</a>
+    </div>
+    <script>
+        (function () {
+          var btn = document.getElementById("mob-btn");
+          var menu = document.getElementById("mob-menu");
+          if (btn) btn.addEventListener("click", function () { menu.classList.toggle("hidden"); });
+          var seg = location.pathname.split("/").pop().replace(".html", "");
+          if (!seg) seg = "index";
+          document.querySelectorAll(".nav-link").forEach(function (a) {
+            if (a.dataset.page === seg) {
+              a.style.color = "#002046";
+              a.style.borderBottom = "2px solid #002046";
+              a.style.paddingBottom = "2px";
+            }
+          });
+        })();
+    </script>
+  </header>
+  <main class="flex-grow flex flex-col">
+    <!-- ABOUT SECTION -->
+    <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full reveal"
+      id="about">
+      <h1
+        class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary-container mb-4 tracking-tight leading-tight">
+        About SARNOT Clinic</h1>
+      <p class="text-lg text-on-surface-variant mb-12 max-w-3xl leading-relaxed">Complete dental and cosmetic solutions
+        with 14+ years of trusted care</p>
+      <div
+        class="grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-xl border border-surface-variant bg-surface-container-lowest">
+        <div
+          class="bg-secondary-container/40 p-8 md:p-12 lg:p-16 flex flex-col justify-center relative overflow-hidden">
+          <div
+            class="absolute -top-24 -left-24 w-48 h-48 bg-secondary-fixed rounded-full blur-3xl opacity-50 pointer-events-none">
+          </div>
+          <div class="relative z-10">
+            <h3 class="text-2xl md:text-3xl font-bold text-primary-container mb-6 leading-snug">A Message from Our
+              Founder</h3>
+            <div class="space-y-4 text-on-surface-variant text-base leading-relaxed">
+              <p>We believe a healthy smile is more than just good oral hygiene—it's a reflection of confidence and
+                well-being. Since 2010, our mission has been to offer accessible, personalized dental care that blends
+                clinical expertise with a human touch.</p>
+              <p>We aim to make every visit comfortable, every treatment effective, and every patient feel like family.
+                Our clinic is built on care, trust, and patient-first principles.</p>
+              <p>Thank you for trusting us with your smile.</p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-secondary/20">
+              <div class="font-bold text-primary-container text-lg">Dr. Mahavir Sarnot, MDS</div>
+              <div class="text-secondary font-medium text-sm mt-1">Founder &amp; Chief Dentist | Endodontist &amp;
+                Implantologist</div>
+            </div>
+          </div>
+        </div>
+        <div class="relative min-h-[400px] md:min-h-full">
+          <img alt="Dr. Mahavir Sarnot" class="absolute inset-0 w-full h-full object-cover object-center"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ1GY9TbQIo6-GWEJH1_2BwBYmVpkcc9RifH4F2JRVhLpYUX0p5MXeg4oCFix-cTYhssqUcI_3zlTyG9UV__1dux9ZT7jCtyvatC_rLAOsrjSzDVgEY72f2GbEpfPXvlrAw6z2Hc-H180rQvdLn6kcnv9ynS59yL6KmE3xLWM-VxOzqbnc7KB2i7PRfi45BBNKwDVHCnK60eglBqlGQvkLZWGsmcZs8nY9lY7eF-dJpiuiOCl3-kPsEPvq-3UHQInNUyjreakqpqI" />
+          <div class="absolute inset-0 bg-gradient-to-r from-secondary-container/60 to-transparent pointer-events-none">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT SECTION - DR. PRIYANKA (REVERSED) -->
+    <section
+      class="py-12 md:py-16 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full reveal reveal-up"
+      id="about-priyanka">
+      <div
+        class="grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-xl border border-surface-variant bg-surface-container-lowest flex-col-reverse md:flex-row">
+        <div class="relative min-h-[400px] md:min-h-full order-2 md:order-1">
+          <img alt="Dr. Priyanka Sarnot" class="absolute inset-0 w-full h-full object-cover object-center"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCajZ2YOTIhSr9bT_ZUFwqfiTVUucwRhQQDykNzajNAdwDZdDzAmAWfDcvDvevHLjI8lKvHvHBNsEgByXanfPIOAoDFtNEEFyWqMHZXUR_N8GXKZK4LGD7AqDJb-jtsHg3vvsMTaQzl0crtma6qprgg7bwi4_2KnsM1I0XVbkQHrK9PQEMxZlTiJ5u5qJ6jr8htvrOzafVjmCP3cuLMWPUmBGhdrdkFuhwk3oiJvXZyJR3ytjBNJesM3GRUx5adhenP6IqaSrR55Oc" />
+          <div class="absolute inset-0 bg-gradient-to-l from-tertiary-fixed/60 to-transparent pointer-events-none">
+          </div>
+        </div>
+        <div
+          class="bg-tertiary-fixed/30 p-8 md:p-12 lg:p-16 flex flex-col justify-center relative overflow-hidden order-1 md:order-2">
+          <div
+            class="absolute -bottom-24 -right-24 w-48 h-48 bg-tertiary-fixed-dim rounded-full blur-3xl opacity-50 pointer-events-none">
+          </div>
+          <div class="relative z-10">
+            <h3 class="text-2xl md:text-3xl font-bold text-primary-container mb-6 leading-snug">A Message from Our
+              Co-Founder</h3>
+            <div class="space-y-4 text-on-surface-variant text-base leading-relaxed">
+              <p>Beauty and health go hand in hand. My passion lies in helping our patients feel confident in their
+                smiles through advanced cosmetic and skin treatments. Combined with Dr. Mahavir's expertise in
+                restorative dentistry, we create comprehensive solutions that enhance both function and aesthetics.</p>
+              <p>Every patient is unique, and we take time to understand your individual goals and concerns. Whether
+                it's cosmetic dentistry, skin rejuvenation, or hair restoration, our approach is always patient-centric
+                and results-driven.</p>
+              <p>I'm honored to be part of your transformation journey.</p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-tertiary/20">
+              <div class="font-bold text-primary-container text-lg">Dr. Priyanka Sarnot, BDS</div>
+              <div class="text-tertiary font-medium text-sm mt-1">Co-Founder &amp; Specialist | Cosmetic Dentistry &amp;
+                Skin Treatment</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- VISION & MISSION -->
+    <section
+      class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface max-w-container-max mx-auto w-full reveal reveal-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary-container mb-12">Our Vision &amp; Mission</h2>
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
+        <div>
+          <h3 class="text-xl font-bold text-primary-container mb-4 flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary" data-weight="fill">visibility</span>
+            Vision
+          </h3>
+          <p class="text-on-surface-variant leading-relaxed">To become a leading dental care provider known for
+            innovation, empathy, and exceptional patient experiences in our region and beyond.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-primary-container mb-4 flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary" data-weight="fill">flag</span>
+            Mission
+          </h3>
+          <ul class="space-y-4 text-on-surface-variant">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">check_circle</span>
+              <span>Deliver high-quality, personalized dental care with integrity and compassion</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">check_circle</span>
+              <span>Foster a stress-free, welcoming clinic environment for all ages</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">check_circle</span>
+              <span>Embrace modern technology and best practices to ensure optimal outcomes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">check_circle</span>
+              <span>Educate and empower patients to take charge of their oral health</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clinic Excellence Gallery Section -->
+    <section
+      class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface max-w-container-max mx-auto w-full reveal reveal-up">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary-container mb-4">Clinical Excellence</h2>
+        <p class="text-on-surface-variant text-lg">A glimpse into our advanced diagnostic and treatment facilities</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="group relative overflow-hidden rounded-[32px] h-[350px] shadow-lg">
+          <img
+            src="clinic_lobby_premium_1777888748753.png"
+            alt="Premium Lobby"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+            <h4 class="text-white font-bold text-xl">Welcoming Lobby</h4>
+            <p class="text-white/80 text-sm">A calm environment to begin your journey.</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-[32px] h-[350px] shadow-lg">
+          <img
+            src="dental_surgery_advanced_1777888764469.png"
+            alt="Advanced Surgery"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+            <h4 class="text-white font-bold text-xl">Advanced Surgery</h4>
+            <p class="text-white/80 text-sm">Equipped with the latest diagnostic technology.</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-[32px] h-[350px] shadow-lg">
+          <img
+            src="dermatology_room_sleek_1777888785524.png"
+            alt="Skin Care Suite"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+            <h4 class="text-white font-bold text-xl">Dermatology Suite</h4>
+            <p class="text-white/80 text-sm">Premium laser and skin treatment facility.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES SECTION -->
+    <section
+      class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest max-w-container-max mx-auto w-full reveal reveal-up">
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary-container mb-4">What We Stand For</h2>
+        <p class="text-on-surface-variant text-lg">Our core values guide every smile we restore and every relationship
+          we build</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div
+          class="reveal reveal-up delay-100 hover-lift bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-surface-variant group">
+          <div
+            class="w-14 h-14 bg-secondary-container text-secondary rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform animate-float">
+            <span class="material-symbols-outlined" data-weight="fill">group</span>
+          </div>
+          <h3 class="text-lg font-bold text-primary-container mb-2">Patient-Centered Care</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">Every treatment begins with listening to your needs
+            and goals</p>
+        </div>
+        <div
+          class="reveal reveal-up delay-200 hover-lift bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-surface-variant group">
+          <div
+            class="w-14 h-14 bg-secondary-container text-secondary rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform animate-float"
+            style="animation-delay: 0.5s">
+            <span class="material-symbols-outlined" data-weight="fill">star</span>
+          </div>
+          <h3 class="text-lg font-bold text-primary-container mb-2">Excellence</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">We uphold the highest clinical standards and pursue
+            continuous learning</p>
+        </div>
+        <div
+          class="reveal reveal-up delay-300 hover-lift bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-surface-variant group">
+          <div
+            class="w-14 h-14 bg-secondary-container text-secondary rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform animate-float"
+            style="animation-delay: 1s">
+            <span class="material-symbols-outlined" data-weight="fill">visibility</span>
+          </div>
+          <h3 class="text-lg font-bold text-primary-container mb-2">Transparency</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">We communicate clearly, honestly, and openly—no
+            surprises</p>
+        </div>
+        <div
+          class="reveal reveal-up delay-400 hover-lift bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-surface-variant group">
+          <div
+            class="w-14 h-14 bg-secondary-container text-secondary rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform animate-float"
+            style="animation-delay: 1.5s">
+            <span class="material-symbols-outlined" data-weight="fill">weekend</span>
+          </div>
+          <h3 class="text-lg font-bold text-primary-container mb-2">Comfort</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed">We prioritize gentle care and calming spaces for
+            anxiety-free visits</p>
+        </div>
+      </div>
+    </section>
+    <!-- TEAM SECTION -->
+    <section
+      class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface max-w-container-max mx-auto w-full reveal reveal-up"
+      id="team">
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary-container mb-4">Meet the Team Behind the Smiles</h2>
+        <p class="text-on-surface-variant text-lg">Passionate professionals dedicated to exceptional dental care</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Dr. Mahavir -->
+        <div
+          class="reveal reveal-up delay-100 hover-lift bg-white rounded-xl overflow-hidden shadow-sm border border-surface-variant hover:shadow-md transition-shadow group">
+          <div class="aspect-[4/3] overflow-hidden bg-surface-variant relative">
+            <img alt="Dr. Mahavir Sarnot"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJoyH8CuT8wPOB3zqiqjtkjykaM_iYD9lVHRBASbwPCDqGXvlcOBYXBNoMFn3YLyW82LgMdSBgnaK1xtqjOzdv56cpk8eCuWplkLOWywYpvOJdrYQISCtTnVpHUs2XTowy5YEwOn-gHSEZfU1ig3meTm8wK6mDTIpW0uPyaOxjF0-SqUzIGDMOQNEmnYbKbshVtffW0m5lWFFFOdiPzJwPaGh9l96-83HrEkh-5nt1xEjX34qzNIg4THkcY9X0Pc03h73FR56Ge4U" />
+          </div>
+          <div class="p-5 text-center">
+            <h3 class="text-base font-bold text-primary-container mb-1">Dr. Mahavir Sarnot</h3>
+            <div class="text-secondary font-semibold text-xs mb-1">Chief Dentist &amp; Founder</div>
+            <div class="text-on-surface-variant text-xs">Endodontist &amp; Implantologist</div>
+          </div>
+        </div>
+        <!-- Dr. Priyanka -->
+        <div
+          class="reveal reveal-up delay-200 hover-lift bg-white rounded-xl overflow-hidden shadow-sm border border-surface-variant hover:shadow-md transition-shadow group">
+          <div class="aspect-[4/3] overflow-hidden bg-surface-variant relative">
+            <img alt="Dr. Priyanka Sarnot"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuyjOcjuFOuqorfZZSAmeQKnsPkGzgKUrq_eBZ0ww1JYDSOyJL77xhxvaQ1ojUrYxrLRyWXkKCBu1CLLstodeeZjBV_zzmhDxFqc68y1Z5Fpo7664dXQKA6N1vrBtu1CSDJ-UCwKc7IPqtJWpzEMd9PQEtWnvu1yTL24nsZTE4gERcvZf0qoNeNqLhv13OUtmdpUwb8UBPrZtvLvXdOuO0-ZqmyP9yYtUhnE5pyVHiy2CR5k9Ho7YmhMg5A5Wlsx-7_wV9yZsjvKo" />
+          </div>
+          <div class="p-5 text-center">
+            <h3 class="text-base font-bold text-primary-container mb-1">Dr. Priyanka Sarnot</h3>
+            <div class="text-secondary font-semibold text-xs mb-1">Co-Founder &amp; Specialist</div>
+            <div class="text-on-surface-variant text-xs">Cosmetic Dentistry &amp; Skin</div>
+          </div>
+        </div>
+        <!-- Dr. Anil Kumar -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow-sm border border-surface-variant hover:shadow-md transition-shadow group">
+          <div class="aspect-[4/3] overflow-hidden bg-surface-variant flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-outline-variant">person</span>
+          </div>
+          <div class="p-5 text-center">
+            <h3 class="text-base font-bold text-primary-container mb-1">Dr. Anil Kumar</h3>
+            <div class="text-secondary font-semibold text-xs mb-1">General Dentistry</div>
+            <div class="text-on-surface-variant text-xs">Preventive &amp; Restorative Care</div>
+          </div>
+        </div>
+        <!-- Dr. Sneha Sharma -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow-sm border border-surface-variant hover:shadow-md transition-shadow group">
+          <div class="aspect-[4/3] overflow-hidden bg-surface-variant flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-outline-variant">person</span>
+          </div>
+          <div class="p-5 text-center">
+            <h3 class="text-base font-bold text-primary-container mb-1">Dr. Sneha Sharma</h3>
+            <div class="text-secondary font-semibold text-xs mb-1">Pediatric Dentistry</div>
+            <div class="text-on-surface-variant text-xs">Child-Friendly Dental Care</div>
+          </div>
+        </div>
+        <!-- Dr. Rajesh Verma -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow-sm border border-surface-variant hover:shadow-md transition-shadow group">
+          <div class="aspect-[4/3] overflow-hidden bg-surface-variant flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-outline-variant">person</span>
+          </div>
+          <div class="p-5 text-center">
+            <h3 class="text-base font-bold text-primary-container mb-1">Dr. Rajesh Verma</h3>
+            <div class="text-secondary font-semibold text-xs mb-1">Orthodontics</div>
+            <div class="text-on-surface-variant text-xs">Braces &amp; Teeth Alignment</div>
+          </div>
+        </div>
+        <!-- Dr. Anjali Desai -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow-sm border border-surface-variant hover:shadow-md transition-shadow group">
+          <div class="aspect-[4/3] overflow-hidden bg-surface-variant flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-outline-variant">person</span>
+          </div>
+          <div class="p-5 text-center">
+            <h3 class="text-base font-bold text-primary-container mb-1">Dr. Anjali Desai</h3>
+            <div class="text-secondary font-semibold text-xs mb-1">Periodontics</div>
+            <div class="text-on-surface-variant text-xs">Gum Disease Treatment</div>
+          </div>
+        </div>
+        <!-- Dr. Vikram Singh -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow-sm border border-surface-variant hover:shadow-md transition-shadow group">
+          <div class="aspect-[4/3] overflow-hidden bg-surface-variant flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-outline-variant">person</span>
+          </div>
+          <div class="p-5 text-center">
+            <h3 class="text-base font-bold text-primary-container mb-1">Dr. Vikram Singh</h3>
+            <div class="text-secondary font-semibold text-xs mb-1">Oral Surgery</div>
+            <div class="text-on-surface-variant text-xs">Extractions &amp; Implants</div>
+          </div>
+        </div>
+        <!-- Dr. Meera Nair -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow-sm border border-surface-variant hover:shadow-md transition-shadow group">
+          <div class="aspect-[4/3] overflow-hidden bg-surface-variant flex items-center justify-center">
+            <span class="material-symbols-outlined text-6xl text-outline-variant">person</span>
+          </div>
+          <div class="p-5 text-center">
+            <h3 class="text-base font-bold text-primary-container mb-1">Dr. Meera Nair</h3>
+            <div class="text-secondary font-semibold text-xs mb-1">Prosthodontics</div>
+            <div class="text-on-surface-variant text-xs">Dentures &amp; Crowns</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- HOURS SECTION -->
+    <section
+      class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest max-w-container-max mx-auto w-full reveal reveal-up">
+      <div class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary-container mb-4">Clinic Hours</h2>
+        <p class="text-on-surface-variant text-lg">Find a time that works for you—our doors are open throughout the week
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
+          <img alt="Clinic Reception" class="absolute inset-0 w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuClLF1kwt0L3gQgnQXAVWmL7rTcQsAMrlk9DWCJkjFxJ3-S6jNPU0csyrXgumy44pA8VCfG5qXR535eezfcB0yjqZySmvKuGY2sMTDWH9dzWyDrVoiSyw-bwo6eGotftMlTNhocCb3yG6YXD6vpGZ0_rrYzewWxvlFf-1cD8O2Aj4ePI6XPsEHP7-uPzPlhee7VvlE-KooW8WB6_XLivnsnsgH3Z-WnDGHFQpS7-PQfV7cyazE_ziigoeHrF4V97x3pUgPBgP50eYw" />
+        </div>
+        <div class="bg-white rounded-2xl border border-surface-variant p-6 md:p-8 shadow-sm">
+          <ul class="space-y-0 divide-y divide-surface-variant">
+            <li class="flex justify-between py-4 text-on-surface">
+              <strong class="font-bold">Monday</strong>
+              <span class="font-semibold text-secondary">09:00 AM – 08:00 PM</span>
+            </li>
+            <li class="flex justify-between py-4 text-on-surface">
+              <strong class="font-bold">Tuesday</strong>
+              <span class="font-semibold text-secondary">09:00 AM – 08:00 PM</span>
+            </li>
+            <li class="flex justify-between py-4 text-on-surface">
+              <strong class="font-bold">Wednesday</strong>
+              <span class="font-semibold text-secondary">09:00 AM – 08:00 PM</span>
+            </li>
+            <li class="flex justify-between py-4 text-on-surface">
+              <strong class="font-bold">Thursday</strong>
+              <span class="font-semibold text-secondary">09:00 AM – 08:00 PM</span>
+            </li>
+            <li class="flex justify-between py-4 text-on-surface">
+              <strong class="font-bold">Friday</strong>
+              <span class="font-semibold text-secondary">09:00 AM – 08:00 PM</span>
+            </li>
+            <li class="flex justify-between py-4 text-on-surface">
+              <strong class="font-bold">Saturday</strong>
+              <span class="font-semibold text-secondary">09:00 AM – 03:00 PM</span>
+            </li>
+            <li class="flex justify-between py-4 text-on-surface opacity-60">
+              <strong class="font-bold">Sunday</strong>
+              <span class="font-semibold text-error">Closed</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- CTA SECTION -->
+    <section
+      class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface max-w-container-max mx-auto w-full reveal reveal-up">
+      <div
+        class="bg-secondary-container/50 rounded-3xl p-8 md:p-12 lg:p-16 grid md:grid-cols-2 gap-12 items-center overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-primary-container mb-4 leading-tight">Ready to Experience
+            Better Dental Care?</h2>
+          <p class="text-on-surface-variant text-lg mb-8 leading-relaxed">Schedule your visit today and take the first
+            step toward a healthier, brighter smile.</p>
+          <a href="book-appointment.html"
+            class="bg-white text-secondary font-bold py-3 px-8 rounded-full hover:bg-surface-bright hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-black/5 inline-flex items-center gap-2">
+            Book Your Appointment
+            <span class="material-symbols-outlined text-sm" data-weight="fill">arrow_forward</span>
+          </a>
+        </div>
+        <div class="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg md:order-last order-first z-10">
+          <img alt="Smiling Patient" class="absolute inset-0 w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvJMXrqyVFcT2Gw-eTo3QPA5lyvPnIqhPEVwICIdJ-iDIDTYXLaAHaxKYxg9ApL1RZ2ukNdP1jImR7gbkMr-JDV2wL1BskFkkqmjOZSfKh3chyDIsMdjmqygexnwxg5-xy0-nYyiOM0IAA-BnpGNFnkvAsYJqBBEc2-BdJjRwXDTxn2015Uj2GY7tLiVUQ7byOyFzgR9_JxaA3vo3lQp3QjUqnBit4Fvx9x5q5zx0JOHTsSn0TZQm6MGkNb7XVvGepIIQqJAipRUs" />
+        </div>
+      </div>
+    </section>
+    <!-- NEWSLETTER SECTION -->
+    <section
+      class="py-16 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest max-w-container-max mx-auto w-full mb-12 reveal reveal-up">
+      <div class="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-surface-variant">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-primary-container mb-2">Keep Smiling Bright — Stay Connected
+            </h2>
+            <p class="text-on-surface-variant">Get dental care tips, clinic updates, and exclusive offers straight to
+              your inbox</p>
+          </div>
+          <form class="flex flex-col sm:flex-row gap-3">
+            <input
+              class="flex-grow px-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-shadow text-on-surface bg-surface font-medium"
+              placeholder="Your Email Address" required="" type="email" />
+            <button
+              class="bg-primary-container text-on-primary font-bold py-3 px-8 rounded-lg hover:bg-opacity-90 transition-colors whitespace-nowrap"
+              type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- FOOTER -->
+
+
+  <script src="footer.js"></script>
+</body>
+
+</html>
